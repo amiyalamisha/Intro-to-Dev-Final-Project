@@ -1,9 +1,9 @@
-
-//time_since_last_cloud++; //increase the timer since we last spawned a cloud
-//time_between_clouds = random_range(30, 50);		// random generation time
 randomize();
 
-if(global.current_no_of_platforms < global.min_platforms){
+time_since_last_platform++; //increase the timer since we last spawned a cloud
+time_between_platforms = random_range(30, 50);		// random generation time
+
+if(time_since_last_platform > time_between_platforms || global.current_no_of_platforms < global.min_platforms){
 	if(global.current_no_of_platforms < global.max_platforms){	// comparing to max amount of clouds
 		//add logic to spawn new clouds
 		var possible_new_cloud = instance_create_depth(platform_spawn_x, random_range(platform_spawn_y, room_height - 30), 1, obj_cloud);

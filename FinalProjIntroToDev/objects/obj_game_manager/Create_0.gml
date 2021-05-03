@@ -5,8 +5,8 @@ global.max_platforms = 7;
 global.min_platforms = 4;
 global.current_no_of_platforms = instance_number(obj_cloud);
 
-//time_since_last_cloud = 0; //timer for when we last spawned a cloud
-//time_between_clouds = 30;
+time_since_last_platform = 0; //timer for when we last spawned a cloud
+time_between_platforms = 30;
 
 platform_spawn_x = room_width;
 platform_spawn_y = 200;
