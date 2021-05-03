@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 global.max_platforms = 7;
 global.min_platforms = 4;
 global.current_no_of_platforms = instance_number(obj_cloud);
