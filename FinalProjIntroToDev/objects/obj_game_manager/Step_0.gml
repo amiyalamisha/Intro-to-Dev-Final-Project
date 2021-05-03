@@ -13,13 +13,13 @@ if(time_since_last_platform > time_between_platforms || global.current_no_of_pla
 			// tring new placements of clouds
 			while(place_meeting(x, y, obj_cloud) && place_meeting(x, y + 100, obj_cloud) && place_meeting(x, y - 100, obj_cloud) && tries < 100){
 				x = room_width;
-				y = random_range(global.min_platforms, room_height);
+				y = random_range(platform_spawn_y, room_height);
 				hspeed = irandom_range(speed_min, speed_max);
 				tries++;
 			}
 		}
 		global.current_no_of_platforms++;
 		
-		//time_since_last_cloud = 0;	// timer
+		time_since_last_platform = 0;	// timer
 	}
 }

@@ -9,7 +9,7 @@ time_since_last_platform = 0; //timer for when we last spawned a cloud
 time_between_platforms = 30;
 
 platform_spawn_x = room_width;
-platform_spawn_y = 200;
+platform_spawn_y = 100;
 
 speed_min = -3;
 speed_max = -5;
