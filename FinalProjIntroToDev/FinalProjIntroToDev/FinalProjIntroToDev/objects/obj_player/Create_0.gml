@@ -9,6 +9,7 @@ obj_player.depth = 5;
 
 onGround = false;
 
+falling = false;
 
 knocked_out = false;
 time_to_respawn = 50;

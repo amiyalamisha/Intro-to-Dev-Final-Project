@@ -6,8 +6,8 @@ time_since_last_clouds = 0; //timer for when we last spawned a cloud
 // changed from 30 to 25
 time_between_clouds = 25;
 
-global.max_candy = 5;
-global.min_candy = 2;
+global.max_candy = 3;
+global.min_candy = 1;
 global.current_no_of_candy = instance_number(obj_candycane);
 
 time_since_last_candy = 0; //timer for when we last spawned a cloud
