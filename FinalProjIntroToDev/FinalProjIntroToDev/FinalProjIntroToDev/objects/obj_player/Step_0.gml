@@ -13,10 +13,11 @@ else{
 	grav = 0.5;
 }
 
-show_debug_message(yspeed);
+
 if(place_meeting(x, y, obj_cloud) && yspeed > 0){
 	yspeed *= -1;
 	obj_cloud.pop = true;
+	sprite_index = spr_player_jumping;
 }
 else if(place_meeting(x, y, obj_candycane) && yspeed > 0){
 	grav = 0;

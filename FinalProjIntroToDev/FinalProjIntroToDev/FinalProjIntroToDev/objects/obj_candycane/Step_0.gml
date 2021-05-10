@@ -6,3 +6,4 @@ if(x < 0){
 	global.current_no_of_candy--;
 }
 
+//show_debug_message(y);

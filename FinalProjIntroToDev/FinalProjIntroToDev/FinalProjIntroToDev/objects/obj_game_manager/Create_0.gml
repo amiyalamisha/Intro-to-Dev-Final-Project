@@ -1,3 +1,5 @@
+score = 0;
+
 global.max_clouds = 7;
 global.min_clouds = 4;
 global.current_no_of_clouds = instance_number(obj_cloud);
@@ -19,3 +21,7 @@ platform_spawn_y = 280;
 
 speed_min = -3;
 speed_max = -5;
+
+global.max_icecream = 10;
+global.min_icecream = 2;
+global.current_no_of_icecream = instance_number(obj_icecream);
