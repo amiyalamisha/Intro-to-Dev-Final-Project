@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_candycane",
+    "path": "sprites/spr_candycane/spr_candycane.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -28,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_game_manager",
+  "name": "obj_candycane",
   "tags": [],
   "resourceType": "GMObject",
 }
