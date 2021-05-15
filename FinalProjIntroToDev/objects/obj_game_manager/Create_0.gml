@@ -25,3 +25,6 @@ speed_max = -5;
 global.max_icecream = 10;
 global.min_icecream = 2;
 global.current_no_of_icecream = instance_number(obj_icecream);
+
+
+cat_timer = 6;

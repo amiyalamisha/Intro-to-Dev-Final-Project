@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_cloud",
-    "path": "sprites/spr_cloud/spr_cloud.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -31,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_cloud",
+  "name": "obj_cloud_animation",
   "tags": [],
   "resourceType": "GMObject",
 }

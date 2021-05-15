@@ -35,7 +35,7 @@ if(time_since_last_icecream > time_between_icecream || global.current_no_of_icec
 
 x += hspeed;
 
-if(x < 0){
+if(x < -10){
 	instance_destroy();
-	global.current_no_of_icecream--;
+	global.current_no_of_icecream -- ;
 }

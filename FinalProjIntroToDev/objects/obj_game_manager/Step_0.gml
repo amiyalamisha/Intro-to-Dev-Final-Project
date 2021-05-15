@@ -9,8 +9,7 @@ time_between_candy = random_range(20, 50);		// random generation time
 if(time_since_last_clouds > time_between_clouds || global.current_no_of_clouds < global.min_clouds){
 	if(global.current_no_of_clouds < global.max_clouds){	// comparing to max amount of clouds
 		//add logic to spawn new clouds
-		// kitty: I've changed the random_range.y from -30 to -80
-		var possible_new_cloud = instance_create_depth(platform_spawn_x, random_range(platform_spawn_y, room_height - 130), 1, obj_cloud);
+		var possible_new_cloud = instance_create_depth(platform_spawn_x, random_range(platform_spawn_y, room_height - 330), 1, obj_cloud);
 		
 		with(possible_new_cloud){
 			var tries = 0;
@@ -22,6 +21,15 @@ if(time_since_last_clouds > time_between_clouds || global.current_no_of_clouds <
 				tries++;
 			}
 		}
+		
+		if(cat_timer != 0){
+			cat_timer--;
+		}
+		else{
+			instance_create_depth(possible_new_cloud.x, possible_new_cloud.y - 20, 0, obj_cat);
+			cat_timer = 6;
+		}
+		
 		global.current_no_of_clouds++;
 		
 		time_since_last_clouds = 0;	// timer
@@ -32,7 +40,7 @@ if(time_since_last_clouds > time_between_clouds || global.current_no_of_clouds <
 if(time_since_last_candy > time_between_candy || global.current_no_of_candy < global.min_candy){
 	if(global.current_no_of_candy < global.max_candy){	// comparing to max amount of clouds
 		//add logic to spawn new clouds
-		var possible_new_cloud = instance_create_depth(platform_spawn_x, random_range(platform_spawn_y, room_height - 130), 1, obj_candycane);
+		var possible_new_cloud = instance_create_depth(platform_spawn_x, random_range(platform_spawn_y, room_height - 130), 2, obj_candycane);
 		
 		with(possible_new_cloud){
 			var tries = 0;
@@ -63,5 +71,4 @@ if(time_since_last_candy > time_between_candy || global.current_no_of_candy < gl
 //	//instance_create_depth(room_width/2, room_height/2, 3, obj_icecream);
 //}
 
-
-show_debug_message(score);
+//show_debug_message(score);

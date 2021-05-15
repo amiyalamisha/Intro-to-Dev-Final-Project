@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_cloud",
-    "path": "sprites/spr_cloud/spr_cloud.yy",
+    "name": "spr_annoyingcat",
+    "path": "sprites/spr_annoyingcat/spr_annoyingcat.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_cloud",
+  "name": "obj_cat",
   "tags": [],
   "resourceType": "GMObject",
 }
