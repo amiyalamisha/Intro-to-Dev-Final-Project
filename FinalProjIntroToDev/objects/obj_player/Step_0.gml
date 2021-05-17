@@ -21,7 +21,7 @@ else{
 	grav = 0.5;
 }
 
-if(place_meeting(x, y, obj_cloud) || place_meeting(x, y, obj_candycane)){
+if(place_meeting(x, y, obj_cloud) || place_meeting(x, y, obj_candycane) || place_meeting(x, y, obj_smores)){
 	onGround = true;
 }
 else{
@@ -29,7 +29,7 @@ else{
 }
 
 if(place_meeting(x, y, obj_cloud) && yspeed > 0){
-	yspeed = -10;
+	yspeed *= -1;
 	global.pop = true;
 	sprite_index = spr_player_jumping;
 }
@@ -46,7 +46,7 @@ if(global.pop){
 	global.pop = false;
 }
 
-else if(place_meeting(x, y, obj_candycane) && yspeed > 0){
+else if((place_meeting(x, y, obj_candycane) || place_meeting(x, y, obj_smores))&& yspeed > 0){
 	grav = 0;
 	yspeed = 0;
 }
@@ -58,10 +58,10 @@ if(x < 0 || x > room_width){
 	xspeed = 0;
 }
 
-if(keyboard_check(ord("D"))){
-	xspeed += acceleration; 
-	image_xscale = +1;
-}
+//if(keyboard_check(ord("D"))){
+//	xspeed += acceleration; 
+//	image_xscale = +1;
+//}
 
 
 x += xspeed;

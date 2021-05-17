@@ -39,3 +39,6 @@ if(x < -10){
 	instance_destroy();
 	global.current_no_of_icecream -- ;
 }
+
+//global.current_no_of_icecream = instance_number(obj_icecream);
+show_debug_message(global.energy_points);

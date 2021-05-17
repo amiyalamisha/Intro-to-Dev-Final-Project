@@ -15,7 +15,14 @@ global.current_no_of_candy = instance_number(obj_candycane);
 time_since_last_candy = 0; //timer for when we last spawned a cloud
 time_between_candy = 25;
 
-platform_spawn_x = room_width;
+global.max_cookie = 3;
+global.min_cookie = 1;
+global.current_no_of_cookies = instance_number(obj_smores);
+
+time_since_last_cookie = 0; //timer for when we last spawned a cloud
+time_between_cookie = 25;
+
+platform_spawn_x = room_width + 100;
 // changed y from 100 to 280
 platform_spawn_y = 280;
 
