@@ -3,3 +3,4 @@
 
 instance_destroy();
 score++;
+global.energy_points++;

@@ -6,6 +6,7 @@ obj_icecream.depth = 3;
 global.max_icecream = 5;
 global.min_icecream = 2;
 global.current_no_of_icecream = instance_number(obj_icecream);
+global.energy_points = 0;
 
 time_since_last_icecream = 0; //timer for when we last spawned a cloud
 time_between_icecream = 25;
