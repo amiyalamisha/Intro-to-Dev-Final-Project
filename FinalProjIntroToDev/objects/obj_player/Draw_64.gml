@@ -1,41 +1,41 @@
 draw_set_font(fnt_score);
-draw_set_color(c_maroon);
+draw_set_color(c_blue);
 
-// drawing text to display player 2 score
-draw_text(30, 20, string(score));
+// drawing text to display player score
+draw_set_color(c_dkgray);
+draw_set_font(fnt_score);
+draw_text(70, 35, string(score));
 
-/////////////////////////////////// LIVES ////////////////////////////////////////////
+/////////////////////////////////// HIGH SCORES ////////////////////////////////////////////
+//draw_set_font(fnt_highscore);
+draw_text(room_width - 320, 100,"High Scores:\n" + string(global.highscore1) + "\n" + string(global.highscore2) + "\n" + string(global.highscore2));
 
-if(global.player_lives == 3){
-	draw_sprite_ext(spr_life_3, -1, 1030, 30, 3, 3, 0, c_white, 1);
-}
 
-if(global.player_lives == 2){
-	draw_sprite_ext(spr_life_2, -1, 1030, 30, 3, 3, 0, c_white, 1);
-}
-
-if(global.player_lives == 1){
-	draw_sprite_ext(spr_life_1, -1, 1030, 30, 3, 3, 0, c_white, 1);
-}
 
 /////////////////////////////////// ENERGY POINTS ////////////////////////////////////////////
-
-if(global.energy_points == 5){
-	draw_sprite_ext(spr_energy5, -1, 30, 75, 1, 1, 0, c_white, 1);
-}
-
-if(global.energy_points == 4){
-	draw_sprite_ext(spr_energy4, -1, 30, 75, 1, 1, 0, c_white, 1);
-}
-
-if(global.energy_points == 3){
-	draw_sprite_ext(spr_energy3, -1, 30, 75, 1, 1, 0, c_white, 1);
-}
-
-if(global.energy_points == 2){
-	draw_sprite_ext(spr_energy2, -1, 30, 75, 1, 1, 0, c_white, 1);
-}
-
-if(global.energy_points == 1){
-	draw_sprite_ext(spr_energy1, -1, 30, 75, 1, 1, 0, c_white, 1);
+if(global.animation_energy == true){
+	if(global.animation_energy_timer > 17){
+		draw_sprite_ext(spr_energyani_1, -1, 30, 30, 1.5, 1.5, 0, c_white, 1);
+		global.animation_energy_timer--;
+	}
+	else if(global.animation_energy_timer > 14){
+		draw_sprite_ext(spr_energyani_2, -1, 30, 30, 1.5, 1.5, 0, c_white, 1);
+		global.animation_energy_timer--;
+	}
+	else if(global.animation_energy_timer > 6){
+		draw_sprite_ext(spr_energyani_3, -1, 30, 30, 1.5, 1.5, 0, c_white, 1);
+		global.animation_energy_timer--;
+	}
+	else if(global.animation_energy_timer > 3){
+		draw_sprite_ext(spr_energyani_2, -1, 30, 30, 1.5, 1.5, 0, c_white, 1);
+		global.animation_energy_timer--;
+	}
+	else if(global.animation_energy_timer > 0){
+		draw_sprite_ext(spr_energyani_1, -1, 30, 30, 1.5, 1.5, 0, c_white, 1);
+		global.animation_energy_timer--;
+	}
+	else if(global.animation_energy_timer == 0){
+		global.animation_energy = false;
+		global.animation_energy_timer = 20;
+	}
 }

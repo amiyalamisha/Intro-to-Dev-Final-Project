@@ -29,9 +29,10 @@ else{
 }
 
 if(place_meeting(x, y, obj_cloud) && yspeed > 0){
-	yspeed *= -1;
+	yspeed *= -1.2;
 	global.pop = true;
 	sprite_index = spr_player_jumping;
+	audio_play_sound(snd_cloud_bounce,1,0);
 }
 
 
@@ -45,7 +46,6 @@ if(global.pop){
 	
 	global.pop = false;
 }
-
 else if((place_meeting(x, y, obj_candycane) || place_meeting(x, y, obj_smores))&& yspeed > 0){
 	grav = 0;
 	yspeed = 0;
@@ -54,14 +54,11 @@ else{
 	grav = 0.5;
 }
 
+
 if(x < 0 || x > room_width){
 	xspeed = 0;
 }
 
-//if(keyboard_check(ord("D"))){
-//	xspeed += acceleration; 
-//	image_xscale = +1;
-//}
 
 
 x += xspeed;
@@ -72,15 +69,16 @@ if (btn_justpressed){
 	onGround = false;
     time_in_air = 0;
     sprite_index = spr_player_jumping;
+	audio_play_sound(snd_player_jump,1,0);
 }
 if ((btn_held)&&(time_in_air<10)){
-    yspeed = -7;
+    yspeed = -10;
 } 
 
 if(instance_place(x, y, obj_cat)){
 	knocked_out = true;
 	sprite_index = spr_player_die;
-	show_debug_message("die");
+	audio_play_sound(snd_player_jump,1,0);
 }
 
 
@@ -103,4 +101,9 @@ if(knocked_out){
 		respawn_timer = time_to_respawn;
 		life_timer = respawn_timer;
 	}
+}
+
+
+if(global.player_lives == 0){
+	room_goto(rm_end);
 }

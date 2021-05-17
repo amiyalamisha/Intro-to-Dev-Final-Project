@@ -3,14 +3,10 @@ vspeed = 0;
 
 obj_icecream.depth = 3;
 
-global.max_icecream = 5;
-global.min_icecream = 2;
-global.current_no_of_icecream = instance_number(obj_icecream);
-global.energy_points = 0;
-
-time_since_last_icecream = 0; //timer for when we last spawned a cloud
-time_between_icecream = 25;
-
-//ySpawns = [340, 520, 540]
-spawnX = room_width;
-spawnY = irandom_range(330,550);
+//rand_icecream = irandom_range(1,3);
+		
+//switch(rand_icecream){
+//	case 1: id.sprite_index = spr_icecream; break;
+//	case 2: obj_icecream.sprite_index = spr_icecream2; break;
+//	case 3: obj_icecream.sprite_index = spr_icecream3; break;
+//}

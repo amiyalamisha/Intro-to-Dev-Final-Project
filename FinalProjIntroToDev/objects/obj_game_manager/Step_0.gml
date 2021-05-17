@@ -36,6 +36,25 @@ if(time_since_last_clouds > time_between_clouds || global.current_no_of_clouds <
 			cat_timer = 6;
 		}
 		
+		spawnX = room_width;
+		spawnY = irandom_range(330,550);
+		
+		//var rand_icecream = irandom_range(1,3)
+		
+		//switch(rand_icecream){
+		//	case 1: obj_icecream.sprite_index = spr_icecream; break;
+		//	case 2: obj_icecream.sprite_index = spr_icecream2; break;
+		//	case 3: obj_icecream.sprite_index = spr_icecream3; break;
+		//}
+		
+		if(icecream_timer != 0){
+			icecream_timer--;
+		}
+		else{
+			instance_create_depth(spawnX, spawnY, 0, obj_icecream);
+			icecream_timer = 1;
+		}
+		
 		global.current_no_of_clouds++;
 		
 		time_since_last_clouds = 0;	// timer
@@ -87,18 +106,3 @@ if(time_since_last_cookie > time_between_cookie || global.current_no_of_cookies 
 		time_since_last_cookie = 0;	// timer
 	}
 }
-
-//icecream_index = irandom_range(0, 2);
-//obj_icecream.image_index = icecream_index;
-
-//amount_of_food = irandom_range(0, 4);
-
-//if(global.current_no_of_icecream < global.min_icecream || global.current_no_of_icecream < global.max_icecream){
-//	//var food_platform = instance_id[irandom_range(0, instance_number(obj_candycane))];
-	
-//	//instance_create_depth(food_platform.x, food_platform.y + 10, 3, obj_icecream);
-	
-//	//instance_create_depth(room_width/2, room_height/2, 3, obj_icecream);
-//}
-
-//show_debug_message(score);
