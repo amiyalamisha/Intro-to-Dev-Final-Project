@@ -5,7 +5,7 @@ score++;
 
 
 with(obj_player){
-	inst = instance_nearest(x, y, obj_icecream);
+	inst = instance_nearest(x, y, obj_icecream2);
 	instance_destroy(inst);
 	global.animation_energy = true;
 }

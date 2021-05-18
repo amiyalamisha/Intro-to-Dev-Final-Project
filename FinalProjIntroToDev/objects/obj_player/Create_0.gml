@@ -12,7 +12,6 @@ knocked_out = false;
 time_to_respawn = 50;
 respawn_timer = time_to_respawn;
 
-global.player_lives = 3;
 life_timer = respawn_timer;
 
 
@@ -24,3 +23,6 @@ global.collisiony_cloud = 0;
 
 global.animation_energy = false;
 global.animation_energy_timer = 20;
+
+allow_lose_point = true;
+lose_point_timer = 0;

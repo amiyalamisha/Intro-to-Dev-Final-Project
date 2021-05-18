@@ -1,3 +1,5 @@
+///////////////////////////////// SCORES ///////////////////////////////
+
 draw_set_font(fnt_score);
 draw_set_color(c_blue);
 
@@ -7,7 +9,7 @@ draw_set_font(fnt_score);
 draw_text(70, 35, string(score));
 
 /////////////////////////////////// HIGH SCORES ////////////////////////////////////////////
-//draw_set_font(fnt_highscore);
+
 draw_text(room_width - 320, 100,"High Scores:\n" + string(global.highscore1) + "\n" + string(global.highscore2) + "\n" + string(global.highscore2));
 
 

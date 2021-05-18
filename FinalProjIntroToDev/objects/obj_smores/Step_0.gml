@@ -6,6 +6,8 @@ if(x < -50){
 	global.current_no_of_cookies--;
 }
 
+/////////////////////////////////// CRUMBLING ANIMATION ////////////////////////////////////////////
+
 if(crumble){
 	break_timer++;
 }

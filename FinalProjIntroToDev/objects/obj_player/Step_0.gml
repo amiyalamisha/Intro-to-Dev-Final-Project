@@ -1,3 +1,5 @@
+///////////////////////////////// MOVEMENT /////////////////////////////////////
+
 btn_held = keyboard_check(vk_space);
 btn_justpressed = keyboard_check_pressed(vk_space);
 
@@ -78,16 +80,12 @@ if ((btn_held)&&(time_in_air<10)){
 if(instance_place(x, y, obj_cat)){
 	knocked_out = true;
 	sprite_index = spr_player_die;
-	audio_play_sound(snd_player_jump,1,0);
 }
 
 
 if(knocked_out){
 	if(life_timer > 0){
 		life_timer--;
-	}
-	if(life_timer = 0){
-		global.player_lives--;
 	}
 
 	//timer
@@ -103,7 +101,20 @@ if(knocked_out){
 	}
 }
 
+///////////////////////////////// LOSING POINTS WHEN HIT CAT ///////////////////////////////
 
-if(global.player_lives == 0){
-	room_goto(rm_end);
+if(allow_lose_point){
+	if(place_meeting(x, y, obj_cat)){
+		audio_play_sound(snd_player_lose_point,1,0);
+		score--;
+		allow_lose_point = false;
+		lose_point_timer = 0;
+	}
+}
+else{
+	lose_point_timer++;
+}
+
+if(lose_point_timer > 20){
+	allow_lose_point = true;
 }

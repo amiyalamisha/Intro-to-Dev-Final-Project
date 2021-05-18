@@ -39,19 +39,21 @@ if(time_since_last_clouds > time_between_clouds || global.current_no_of_clouds <
 		spawnX = room_width;
 		spawnY = irandom_range(330,550);
 		
-		//var rand_icecream = irandom_range(1,3)
+		// variety of icecreams
+		var icecream = noone;
+		var rand_icecream = irandom_range(1,3)
 		
-		//switch(rand_icecream){
-		//	case 1: obj_icecream.sprite_index = spr_icecream; break;
-		//	case 2: obj_icecream.sprite_index = spr_icecream2; break;
-		//	case 3: obj_icecream.sprite_index = spr_icecream3; break;
-		//}
+		switch(rand_icecream){
+			case 1: icecream = obj_icecream; break;
+			case 2: icecream = obj_icecream2; break;
+			case 3: icecream = obj_icecream3; break;
+		}
 		
 		if(icecream_timer != 0){
 			icecream_timer--;
 		}
 		else{
-			instance_create_depth(spawnX, spawnY, 0, obj_icecream);
+			instance_create_depth(spawnX, spawnY, 0, icecream);
 			icecream_timer = 1;
 		}
 		
