@@ -30,7 +30,7 @@ speed_min = -3;
 speed_max = -5;
 
 cat_timer = 6;
-icecream_timer = 1;
+icecream_timer = 2;
 
 global.current_no_of_icecream = instance_number(obj_icecream);
 global.energy_points = 0;

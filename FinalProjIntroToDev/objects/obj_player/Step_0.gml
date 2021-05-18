@@ -3,7 +3,6 @@
 btn_held = keyboard_check(vk_space);
 btn_justpressed = keyboard_check_pressed(vk_space);
 
-
 if (btn_justpressed) btn_frames_since = 0;
 else if (btn_held) btn_frames_since += 1;
 else btn_frames_since = 11;
@@ -28,6 +27,21 @@ if(place_meeting(x, y, obj_cloud) || place_meeting(x, y, obj_candycane) || place
 }
 else{
 	onGround = false;
+}
+
+if(onGround){
+	ifpressed = false;
+	if(btn_justpressed){
+		yspeed = -10;
+		audio_play_sound(snd_player_jump,1,0);
+	}
+}
+else if(!ifpressed){
+	if(btn_justpressed){
+		yspeed = -10;
+		audio_play_sound(snd_player_jump,1,0);
+		ifpressed = true;
+	}
 }
 
 if(place_meeting(x, y, obj_cloud) && yspeed > 0){
@@ -61,21 +75,9 @@ if(x < 0 || x > room_width){
 	xspeed = 0;
 }
 
-
-
 x += xspeed;
 y += yspeed;
 
-
-if (btn_justpressed){
-	onGround = false;
-    time_in_air = 0;
-    sprite_index = spr_player_jumping;
-	audio_play_sound(snd_player_jump,1,0);
-}
-if ((btn_held)&&(time_in_air<10)){
-    yspeed = -10;
-} 
 
 if(instance_place(x, y, obj_cat)){
 	knocked_out = true;
@@ -117,4 +119,14 @@ else{
 
 if(lose_point_timer > 20){
 	allow_lose_point = true;
+}
+
+
+///////////////////////////////// ALLOW PLAYER TO JUMP MULTIPLE TIMES ///////////////////////////////
+
+if(global.animation_energy){
+	if(btn_justpressed){
+		yspeed = -10;
+		audio_play_sound(snd_player_jump,1,0);
+	}
 }

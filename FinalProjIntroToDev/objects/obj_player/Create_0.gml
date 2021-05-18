@@ -14,6 +14,7 @@ respawn_timer = time_to_respawn;
 
 life_timer = respawn_timer;
 
+life = 3;
 
 time_in_air = 0;
 btn_frames_since = 0;
@@ -22,7 +23,9 @@ global.collisionx_cloud = 0;
 global.collisiony_cloud = 0;
 
 global.animation_energy = false;
-global.animation_energy_timer = 20;
+global.animation_energy_timer = 60;
 
 allow_lose_point = true;
 lose_point_timer = 0;
+
+ifpressed = false;
